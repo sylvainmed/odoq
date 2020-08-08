@@ -8,6 +8,8 @@
 }
 
 .logo-container {
+  cursor: pointer;
+  outline: none;
   line-height: 0;
   min-width: 30px;
   min-height: 30px;

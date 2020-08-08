@@ -1,4 +1,4 @@
-import {Component, DoCheck, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 declare const resizeCards: any;
 
@@ -7,14 +7,11 @@ declare const resizeCards: any;
   templateUrl: './grid-cards.component.html',
   styleUrls: ['./grid-cards.component.scss']
 })
-export class GridCardsComponent implements OnInit, DoCheck {
+export class GridCardsComponent implements OnInit {
 
   @Input() cardsList: Array<any>;
 
   ngOnInit(): void {
-  }
-
-  ngDoCheck() {
     resizeCards();
   }
 
