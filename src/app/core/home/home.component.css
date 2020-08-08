@@ -7,34 +7,3 @@
   margin: 2em auto;
 }
 
-.quote-card {
-
-}
-
-.masonry {
-  display: flex;
-  flex-flow: column wrap;
-  margin-left: -8px; /* Adjustment for the gutter */
-  width: 100%;
-}
-
-.masonry-brick {
-  margin: 0 8px 8px 0; /* Some gutter */
-}
-
-.masonry-brick-v {
-  width: 100%
-}
-
-@media screen and (min-width: 1024px) {
-  .masonry-brick-v {
-    width: 33.33%;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .masonry-brick-v {
-    width: 50%;
-  }
-}
-

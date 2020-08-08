@@ -21,9 +21,11 @@ function masonry(grid, gridCell, gridGutter, dGridCol, tGridCol, mGridCol) {
   }
 }
 
-["resize", "load"].forEach(function (event) {
-  // Follow below steps every time the window is loaded or resized
-  window.addEventListener(event, function () {
-    masonry(".masonry", ".masonry-brick", 10, 3, 2, 1);
+function resizeCards() {
+  ["resize", "load"].forEach(function (event) {
+    // Follow below steps every time the window is loaded or resized
+    window.addEventListener(event, function () {
+      masonry(".masonry", ".masonry-brick", 10, 3, 2, 1);
+    });
   });
-});
+}
