@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "tslint:recommended"
+  ],
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "aw",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "aw",
+      "kebab-case"
+    ],
+    "max-line-length": [
+      true,
+      {
+        "limit": 200,
+        "ignore-pattern": "^import [^,]+ from"
+      }
+    ]
+  }
+}
