@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <div class="logo-container" routerLink="/">
+    <img src="../../../assets/img/logo/100x100.svg" [title]="'odoq.template.logo.title' | translate">
+  </div>
+  <!-- <button mat-flat-button color="primary" routerLink="/">ODOQ</button>-->
+  <button mat-flat-button color="primary" routerLink="/search">{{ 'odoq.template.menu.search' | translate}}</button>
+  <button mat-flat-button color="primary" routerLink="/timeline">{{ 'odoq.template.menu.timeline' | translate}}</button>
+  <span class="spacer"></span>
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="app-container">
+  <router-outlet></router-outlet>
+</div>

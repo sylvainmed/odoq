@@ -1,11 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 
-declare const masonry: any;
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
@@ -67,10 +65,8 @@ export class HomeComponent implements OnInit {
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras Pellentesque malesuada sit amet enim a vestibulum. Donec a nisl id massa iaculis pellentesque at at lorem. Sed condimentum feugiat nisi ac iaculis. '
     }];
 
-  constructor() {
-  }
-
   ngOnInit(): void {
+    // pwet
   }
 
 

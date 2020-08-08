@@ -30,7 +30,9 @@ export function httpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     }),
     AppRoutingModule
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'fr'}],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'fr'},
+    TranslateModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {

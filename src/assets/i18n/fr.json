@@ -1,5 +1,14 @@
 {
   "odoq": {
-    "test": "prout"
+    "test": "prout",
+    "template": {
+      "logo": {
+        "title": "Accueil"
+      },
+      "menu": {
+        "search": "Rechercher",
+        "timeline": "Timeline"
+      }
+    }
   }
 }
