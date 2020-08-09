@@ -1,0 +1,28 @@
+@import './node_modules/@angular/material/theming';
+
+$xsmall-padding: 0.2em;
+$small-padding: 0.3em;
+$padding: 0.5em;
+$big-padding: 0.7em;
+$xbig-padding: 0.8em;
+
+$xsmall-margin: 0.2em;
+$small-margin: 0.3em;
+$margin: 0.5em;
+$big-margin: 0.7em;
+$xbig-margin: 0.8em;
+
+$box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+
+$border: 1px solid rgba(0, 0, 0, .2);
+$border-radius: 4px;
+
+$white: #FFFFFF;
+$color-text: rgba(0, 0, 0, 0.87);
+
+// Create your Sass color vars (will be available in all the project)
+$primary: mat-color(mat-palette($mat-teal));
+$accent: mat-color(mat-palette($mat-gray));
+$warn: mat-color(mat-palette($mat-red));
+
+

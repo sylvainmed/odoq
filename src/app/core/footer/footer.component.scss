@@ -1,0 +1,23 @@
+@import "_variables";
+
+.footer {
+  background-color: $primary;
+}
+
+.footer-container {
+  padding: $xbig-padding;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .footer-section {
+
+    .footer-section-title {
+      width: fit-content;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+}

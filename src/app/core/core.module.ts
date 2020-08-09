@@ -11,10 +11,11 @@ import { TemplateComponent } from './template/template.component';
 import { SearchComponent } from './search/search.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import {TranslateModule} from '@ngx-translate/core';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, TemplateComponent, SearchComponent, TimelineComponent],
+  declarations: [HomeComponent, TemplateComponent, SearchComponent, TimelineComponent, FooterComponent],
   imports: [
     CommonModule,
 

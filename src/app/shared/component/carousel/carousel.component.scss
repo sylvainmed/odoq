@@ -1,0 +1,9 @@
+@import "_variables";
+
+.carousel-container {
+  // background-image: url("img/background-main-quote.jpg");
+  margin-bottom: $margin;
+  border: $border;
+  padding: $big-padding;
+  border-radius: $border-radius;
+}
