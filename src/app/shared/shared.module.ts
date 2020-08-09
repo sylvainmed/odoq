@@ -7,13 +7,15 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {CarouselComponent} from './component/carousel/carousel.component';
+import { QuoteCardComponent } from './component/quote-card/quote-card.component';
 
 @NgModule({
   declarations: [
     PageNotFoundComponent,
     DatatableComponent,
     GridCardsComponent,
-    CarouselComponent
+    CarouselComponent,
+    QuoteCardComponent
   ],
   imports: [
     CommonModule,

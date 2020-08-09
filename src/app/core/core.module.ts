@@ -7,11 +7,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {SharedModule} from '../shared/shared.module';
 import {MatButtonModule} from '@angular/material/button';
-import { TemplateComponent } from './template/template.component';
-import { SearchComponent } from './search/search.component';
-import { TimelineComponent } from './timeline/timeline.component';
+import {TemplateComponent} from './template/template.component';
+import {SearchComponent} from './search/search.component';
+import {TimelineComponent} from './timeline/timeline.component';
 import {TranslateModule} from '@ngx-translate/core';
-import { FooterComponent } from './footer/footer.component';
+import {FooterComponent} from './footer/footer.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { FooterComponent } from './footer/footer.component';
     MatIconModule,
     MatCardModule,
     SharedModule,
-    TranslateModule
+    TranslateModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule
   ]
 })
 export class CoreModule {

@@ -1,0 +1,26 @@
+@import '../../../../assets/style/_variables.scss';
+
+.quote-card {
+  transition: 0.2s ease;
+
+  .quote-content {
+
+  }
+
+  .quote-author {
+    font-style: italic;
+    cursor: pointer;
+  }
+
+  .quote-author:hover {
+    text-decoration: underline;
+  }
+
+  .quote-like {
+    font-size: 20px;
+  }
+}
+
+/*.quote-card:hover {
+  box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 2px 5px 0px rgba(0, 0, 0, 0.12);
+}*/

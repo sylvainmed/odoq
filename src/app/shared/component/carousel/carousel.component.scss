@@ -1,4 +1,4 @@
-@import "_variables";
+@import '../../../../assets/style/_variables.scss';
 
 .carousel-container {
   position: relative;
@@ -21,6 +21,13 @@
     .carousel-author {
       display: flex;
       justify-content: flex-start;
+      margin-top: $xbig-margin;
+      font-style: italic;
+      cursor: pointer;
+    }
+
+    .carousel-author:hover {
+      text-decoration: underline;
     }
 
     .carousel-quote {
@@ -50,12 +57,14 @@
   // décommenter pour faire du parallax
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.15;
+  opacity: 0.3;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
+  z-index: -1;
+  border-radius: $border-radius;
 }
 
 @media screen and (min-width: 1024px) {

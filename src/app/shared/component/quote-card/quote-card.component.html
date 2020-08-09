@@ -1,0 +1,15 @@
+<mat-card class="quote-card">
+  <mat-card-content>
+    <p class="quote-content">
+      {{ quote.content }}
+    </p>
+    <p>
+      <span class="quote-author">- {{quote.title}}</span>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-icon-button color="accent" aria-label="Upvote">
+      <mat-icon class="quote-like">favorite</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
