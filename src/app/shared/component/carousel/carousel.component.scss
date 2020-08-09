@@ -1,9 +1,67 @@
 @import "_variables";
 
 .carousel-container {
-  // background-image: url("img/background-main-quote.jpg");
-  margin-bottom: $margin;
-  border: $border;
+  position: relative;
+
+  margin-bottom: $xbig-margin;
   padding: $big-padding;
   border-radius: $border-radius;
+  min-height: 50px;
+
+  max-width: 100%;
+  height: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .carousel-quote-container {
+    margin: 2em;
+
+    .carousel-author {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .carousel-quote {
+      font-family: 'Roboto', 'Arial';
+      line-height: 1.5em;
+      font-size: 36px;
+      font-weight: 300;
+      quotes: "“" "”" "‘" "’";
+    }
+
+    .carousel-quote::before {
+      content: open-quote;
+    }
+
+    .carousel-quote::after {
+      content: close-quote;
+    }
+  }
+
+}
+
+.carousel-container:after {
+  content: '';
+  background-image: url('/assets/img/background-quote.jpg');
+  // background-attachment: fixed;
+  // background-size: contain;
+  // décommenter pour faire du parallax
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.15;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+
+@media screen and (min-width: 1024px) {
+  .carousel-container {
+    .carousel-quote-container {
+      margin: 4em;
+    }
+  }
 }

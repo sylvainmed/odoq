@@ -1,11 +1,18 @@
+@import "_variables";
+
 .spacer {
   flex: 1 1 auto;
 }
 
+.app-background {
+  background-color: rgb(245 245 245 / 50%);
+  padding-top: $xbig-margin;
+  min-height: 80%;
+}
+
 .app-container {
   max-width: 1000px;
-  margin: 2em auto;
-  min-height: 75%;
+  margin: 0 auto;
 }
 
 .logo-container {
