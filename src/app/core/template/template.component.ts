@@ -11,7 +11,6 @@ export class TemplateComponent implements AfterViewInit {
   value: string;
 
   @ViewChild('appContainer') appContainer: ElementRef;
-  @ViewChild('toolbarContainer') toolbarContainer: ElementRef;
 
   constructor(private router: Router) {
   }
@@ -50,7 +49,6 @@ export class TemplateComponent implements AfterViewInit {
    * Méthode pour gérer la recherche d'une quote dans le champ de la toolbar
    */
   handleSearch() {
-    console.log('lance une recherche avec : ', this.value);
     this.router.navigate(['/search']);
   }
 }

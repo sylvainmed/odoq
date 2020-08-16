@@ -2,7 +2,7 @@
   "name": "odoq",
   "version": "0.0.0",
   "scripts": {
-    "start-odoq": "ng serve --configuration dev",
+    "start-odoq": "ng serve --configuration dev -o",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration production",

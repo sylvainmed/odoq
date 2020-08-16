@@ -1,0 +1,40 @@
+@import '../../../../assets/style/_variables.scss';
+
+.search-bar-container {
+  position: relative;
+
+  margin-bottom: $xbig-margin;
+  padding: $big-padding;
+  border-radius: $border-radius;
+  min-height: 50px;
+
+  max-width: 100%;
+  height: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .search-bar {
+    margin: $xbig-margin;
+  }
+
+}
+
+.search-bar-container:after {
+  content: '';
+  background-image: url('/assets/img/background-quote-search.jpg');
+  // background-attachment: fixed;
+  // background-size: contain;
+  // décommenter pour faire du parallax
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  border-radius: $border-radius;
+}

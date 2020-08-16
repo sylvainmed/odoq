@@ -1,13 +1,11 @@
 <div class="carousel-container">
-
+  <mat-icon class="quote-carousel-move" (click)="handleBefore()">navigate_before</mat-icon>
   <div class="carousel-quote-container">
-    <div class="carousel-quote">
-      Quand on répète un gros mensonge suffisament souvent, les gens finissent par y
-      croire.
+    <div class="carousel-quote" [innerHTML]="mainQuote">
     </div>
     <div class="carousel-author">
       Joseph Goebbels
     </div>
   </div>
-
+  <mat-icon class="quote-carousel-move" (click)="handleNext()">navigate_next</mat-icon>
 </div>

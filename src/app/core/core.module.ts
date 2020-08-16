@@ -15,10 +15,12 @@ import {FooterComponent} from './footer/footer.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import {SearchBarComponent} from './search/search-bar/search-bar.component';
+import {httpInterceptorProviders} from './interceptors/interceptors';
 
 
 @NgModule({
-  declarations: [HomeComponent, TemplateComponent, SearchComponent, TimelineComponent, FooterComponent],
+  declarations: [HomeComponent, TemplateComponent, SearchComponent, TimelineComponent, FooterComponent, SearchBarComponent],
   imports: [
     CommonModule,
 
@@ -32,6 +34,9 @@ import {MatInputModule} from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
     FormsModule
+  ],
+  providers: [
+    httpInterceptorProviders
   ]
 })
 export class CoreModule {

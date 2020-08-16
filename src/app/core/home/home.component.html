@@ -1,2 +1,4 @@
-<app-carousel></app-carousel>
+<app-carousel [mainQuote]="mainQuote"
+              (beforeEvent)="handleLastQuote()"
+              (nextEvent)="handleNextQuote()"></app-carousel>
 <app-grid-cards [cardsList]="allCards"></app-grid-cards>

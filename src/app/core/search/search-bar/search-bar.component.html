@@ -1,0 +1,9 @@
+<div class="search-bar-container">
+  <div class="search-bar">
+    <input matInput type="text" [(ngModel)]="valueToSearch" placeholder="Rechercher un thème ou un auteur">
+    <button mat-button *ngIf="valueToSearch" matSuffix mat-icon-button aria-label="Reset" (click)="valueToSearch=''">
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-icon class="toolbar-button-icon-search" color="primary">search</mat-icon>
+  </div>
+</div>
