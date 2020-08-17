@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import './assets/style/odoq-style.scss';
+@import './assets/style/_variables.scss';
 
 html, body {
   height: 100%;
@@ -8,4 +9,20 @@ html, body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.toaster-success {
+  background-color: $success !important;
+}
+
+.toaster-error {
+  background-color: $error !important;
+}
+
+.toaster-warn {
+  background-color: $warn !important;
+}
+
+.toaster-info {
+  background-color: $primary !important;
 }

@@ -1,8 +1,15 @@
 <div class="quote-container">
 
+  <div class="quote-actions">
+    <button mat-icon-button aria-label="Add object" (click)="navigateToCreation()"
+            [title]="'odoq.admin.quote.list.add' | translate">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
   <div class="quote-list">
-    <app-odoq-list
-      [service]="quoteService"></app-odoq-list>
+    <app-datatable [service]="quoteService"
+                   (selectedItemChanged)="navigateToDetail($event)"></app-datatable>
   </div>
 
   <div class="quote-detail">

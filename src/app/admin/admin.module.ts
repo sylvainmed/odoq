@@ -11,7 +11,6 @@ import {QuoteComponent} from './quote/quote.component';
 import {AdminMenuComponent} from './admin-menu/admin-menu.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import {OdoqListComponent} from './shared/odoq-list/odoq-list.component';
 import {MatTableModule} from '@angular/material/table';
 import {QuoteDetailComponent} from './quote/quote-detail/quote-detail.component';
 import {SharedModule} from '../shared/shared.module';
@@ -22,7 +21,6 @@ import {SharedModule} from '../shared/shared.module';
     DashboardComponent,
     QuoteComponent,
     AdminMenuComponent,
-    OdoqListComponent,
     QuoteDetailComponent
   ],
   imports: [

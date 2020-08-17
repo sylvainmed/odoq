@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AbstractDetailComponent} from '../../shared/abstract-detail.component';
+import {AbstractDetailComponent} from '../../../shared/component/abstract-detail.component';
 import {Quote} from '../../../shared/model/quote.model';
 import {ActivatedRoute} from '@angular/router';
 

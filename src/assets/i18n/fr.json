@@ -9,6 +9,20 @@
         "search": "Rechercher",
         "timeline": "Timeline"
       }
+    },
+    "admin": {
+      "template": {
+      },
+      "quote": {
+        "error": {
+          "get": "Erreur dans la récupération de la Quote : "
+        },
+        "list": {
+          "add": "Créer une nouvelle quote"
+        },
+        "detail": {
+        }
+      }
     }
   }
 }

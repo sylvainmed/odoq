@@ -3,6 +3,11 @@
 .quote-container {
   display: flex;
 
+  .quote-actions{
+display: flex;
+    flex-direction: column;
+  }
+
   .quote-list {
     flex: 30%;
   }

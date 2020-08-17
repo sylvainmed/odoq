@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {QuoteService} from '../../shared/service/quote.service';
-import {Quote} from '../../shared/model/quote.model';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-quote',
@@ -9,12 +9,20 @@ import {Quote} from '../../shared/model/quote.model';
 })
 export class QuoteComponent implements OnInit {
 
-  selectedItem: Quote;
-
-  constructor(protected quoteService: QuoteService) {
+  constructor(public quoteService: QuoteService,
+              private router: Router,
+              protected readonly activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
+  }
+
+  navigateToDetail(o: any) {
+    this.router.navigate([`${o.id}`], {relativeTo: this.activatedRoute}).then();
+  }
+
+  navigateToCreation() {
+    this.router.navigate([`add`], {relativeTo: this.activatedRoute}).then();
   }
 
 }

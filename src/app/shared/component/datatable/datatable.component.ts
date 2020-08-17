@@ -21,17 +21,6 @@ export class DatatableComponent implements OnInit {
 
   ngOnInit() {
     this.loadData();
-    // SEULEMENT POUR TEST EN DEV =>
-    this.items = [{
-      id: 1,
-      title: 'Molly Ivins',
-      content: 'La satire est l\'arme des faibles contre les puissants.'
-    },
-      {
-        id: 2,
-        title: 'Winston Churchill',
-        content: 'En temps de guerre, la vérité est si précieuse qu\'elle devrait toujours être protégée par un rempart de mensonges.'
-      }];
   }
 
   /**

@@ -17,7 +17,7 @@ export class QuoteResolver implements Resolve<Quote> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Quote> | Promise<Quote> | Quote {
     const id = +route.paramMap.get('id');
-    if (id !== null) {
+    if (id) {
       return this.quoteService.get(id)
         .pipe(
           take(1),
@@ -25,12 +25,13 @@ export class QuoteResolver implements Resolve<Quote> {
             if (quote) {
               return of(quote);
             } else {
-              return this.resolverUtilService.handleUnresolved('quote', ['quote', id]);
+              console.log('unresolved');
+              return this.resolverUtilService.handleUnresolved('quote', ['admin/quote', id]);
             }
           })
         );
     }
-    return this.resolverUtilService.handleUnresolved('quote', ['quote', id]);
+    return this.resolverUtilService.handleUnresolved('quote', ['admin/quote']);
   }
 
 }

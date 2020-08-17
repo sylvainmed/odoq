@@ -8,6 +8,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {AppRoutingModule} from './app-routing.module';
 import {AppConfService} from './shared/service/app-conf.service';
 import {httpInterceptorProviders} from './shared/interceptors/interceptors';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 export function initializeApp(appConfig: AppConfService) {
   return () => appConfig.getConf();
@@ -25,6 +26,7 @@ export function httpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatSnackBarModule,
 
     TranslateModule.forRoot({
       loader: {
