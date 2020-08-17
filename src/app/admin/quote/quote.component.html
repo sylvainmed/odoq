@@ -8,11 +8,12 @@
   </div>
 
   <div class="quote-list">
-    <app-datatable [service]="quoteService"
+    <app-datatable #datatable
+                   [service]="quoteService"
                    (selectedItemChanged)="navigateToDetail($event)"></app-datatable>
   </div>
 
   <div class="quote-detail">
-    <router-outlet></router-outlet>
+    <router-outlet (activate)="handleRouteActivate($event)"></router-outlet>
   </div>
 </div>

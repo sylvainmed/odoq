@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {Quote} from '../model/quote.model';
 import {AbstractOdoqService} from './abstract-odoq.service';
 import {HttpClient} from '@angular/common/http';
-import {Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -144,12 +143,4 @@ export class QuoteService extends AbstractOdoqService<Quote> {
       upvote: 15
     }];
 
-  /*search(): Observable<Array<Quote>> {
-    return of(this.cards);
-  }*/
-
-  // Mocké en attendant le back
-  get(id: number): Observable<Quote> {
-    return of(this.cards[0]);
-  }
 }

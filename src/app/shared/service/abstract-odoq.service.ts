@@ -30,4 +30,8 @@ export class AbstractOdoqService<T> {
   update(o: T): Observable<T> {
     return this._http.put<T>(`${this.baseUrl}`, o);
   }
+
+  delete(id: number) {
+    return this._http.delete(`${this.baseUrl}/${id}`);
+  }
 }
