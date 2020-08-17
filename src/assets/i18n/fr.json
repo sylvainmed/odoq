@@ -1,6 +1,27 @@
 {
   "odoq": {
-    "test": "prout",
+    "shared": {
+      "button": {
+        "cancel": "Annuler",
+        "create": "Créer",
+        "update": "Enregistrer",
+        "delete": "Supprimer"
+      },
+      "toaster": {
+        "create": {
+          "success": "Création OK",
+          "error": "Erreur dans la création"
+        },
+        "update": {
+          "success": "Modification OK",
+          "error": "Erreur dans la modification"
+        },
+        "delete": {
+          "success": "Suppression OK",
+          "error": "Erreur dans la suppression"
+        }
+      }
+    },
     "template": {
       "logo": {
         "title": "Accueil"
@@ -13,6 +34,10 @@
     "admin": {
       "template": {
       },
+      "detail": {
+        "goToListe.error": "Impossible de naviguer vers la liste.",
+        "goToDetail.error": "Impossible de naviguer vers le détail."
+      },
       "quote": {
         "error": {
           "get": "Erreur dans la récupération de la Quote : "
@@ -21,6 +46,12 @@
           "add": "Créer une nouvelle quote"
         },
         "detail": {
+          "author": {
+            "label": "Auteur"
+          },
+          "content": {
+            "label": "Citation"
+          }
         }
       }
     }

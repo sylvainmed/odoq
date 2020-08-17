@@ -4,6 +4,7 @@ import {Subscription} from 'rxjs';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {AbstractOdoqService} from '../service/abstract-odoq.service';
 import {ToasterService} from '../service/toaster.service';
+import {TraductionService} from '../service/traduction.service';
 
 export abstract class AbstractDetailComponent<T> implements OnInit, OnDestroy {
 
@@ -20,6 +21,9 @@ export abstract class AbstractDetailComponent<T> implements OnInit, OnDestroy {
 
   listeUrl: string;
 
+  /** boolean qui indique dans quel mode on est (création ou modification)*/
+  isCreation: boolean = true;
+
   /** Evènement indiquant que l'objet a changé */
   @Output() objectChanged: EventEmitter<T> = new EventEmitter<T>();
 
@@ -29,7 +33,8 @@ export abstract class AbstractDetailComponent<T> implements OnInit, OnDestroy {
   constructor(protected readonly activatedRoute: ActivatedRoute,
               protected readonly router: Router,
               protected readonly fb: FormBuilder,
-              protected readonly toasterService: ToasterService) {
+              protected readonly toasterService: ToasterService,
+              protected readonly traductionService: TraductionService) {
   }
 
   ngOnInit(): void {
@@ -53,16 +58,15 @@ export abstract class AbstractDetailComponent<T> implements OnInit, OnDestroy {
     // Récupération de l'objet dans la route (via le resolver)
     if (data.hasOwnProperty('objet')) {
       this.objet = data['objet'];
+      this.isCreation = false;
+    } else {
+      this.isCreation = true;
     }
-    /*  } else if (this.mode === RouteMode.CREATION) {
-        this.objet = {...this.buildDefaultObject(data['objet']), code: null};
-      }
-    }*/
   }
 
   /** Annule les modifications en cours et remet le forme a l'état de départ*/
   resetForm() {
-
+    this.formGroup.reset(this.objet);
   }
 
   /** appel au service pour enregistrer le form */
@@ -71,14 +75,15 @@ export abstract class AbstractDetailComponent<T> implements OnInit, OnDestroy {
       this.service.update(this.formGroup.value).subscribe(res => {
         this.objet = res;
         this.objectChanged.emit(res);
-        this.toasterService.success('quote bien créée' + res['id']);
+        this.markFormAsPristine();
+        this.toasterService.success(`${this.traductionService.traduire('odoq.shared.toaster.update.success')} : ${res['id']}`);
       });
     } else {
       this.service.create(this.formGroup.value).subscribe(res => {
         this.objet = res;
         this.objectChanged.emit(res);
         this.gotoDetail(res);
-        this.toasterService.success('quote bien modifiée' + res['id']);
+        this.toasterService.success(`${this.traductionService.traduire('odoq.shared.toaster.create.success')} : ${res['id']}`);
       });
     }
   }
@@ -86,7 +91,7 @@ export abstract class AbstractDetailComponent<T> implements OnInit, OnDestroy {
   delete() {
     this.service.delete(this.objet['id']).subscribe(() => {
       this.objectDeleted.emit(this.objet);
-      this.toasterService.success('quote bien modifiée' + this.objet['id']);
+      this.toasterService.success(`${this.traductionService.traduire('odoq.shared.toaster.delete.success')} : ${this.objet['id']}`);
       this.gotoListe();
     });
   }
@@ -96,7 +101,7 @@ export abstract class AbstractDetailComponent<T> implements OnInit, OnDestroy {
    */
   protected gotoListe() {
     this.router.navigate([this.listeUrl])
-      .catch(error => console.error('Impossible de naviguer vers la liste', error));
+      .catch(error => console.error(this.traductionService.traduire('odoq.admin.detail.goToListe.error'), error));
   }
 
   /**
@@ -104,7 +109,12 @@ export abstract class AbstractDetailComponent<T> implements OnInit, OnDestroy {
    */
   private gotoDetail(objet: T) {
     this.router.navigate([`${this.listeUrl}/${objet['id']}`])
-      .catch(error => console.error('Impossible de naviguer vers le détail de l\'entité.', error));
+      .catch(error => console.error(this.traductionService.traduire('odoq.admin.detail.goToDetail.error'), error));
+  }
+
+  /** remet le form en pristine */
+  private markFormAsPristine() {
+    this.formGroup.markAsPristine();
   }
 
 }

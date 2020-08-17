@@ -9,6 +9,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {CarouselComponent} from './component/carousel/carousel.component';
 import {QuoteCardComponent} from './component/quote-card/quote-card.component';
 import {MatTableModule} from '@angular/material/table';
+import { ButtonsToolbarComponent } from './component/buttons-toolbar/buttons-toolbar.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -16,21 +18,24 @@ import {MatTableModule} from '@angular/material/table';
     DatatableComponent,
     GridCardsComponent,
     CarouselComponent,
-    QuoteCardComponent
+    QuoteCardComponent,
+    ButtonsToolbarComponent
   ],
   imports: [
     CommonModule,
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    TranslateModule
   ],
-  exports: [
-    PageNotFoundComponent,
-    DatatableComponent,
-    GridCardsComponent,
-    CarouselComponent
-  ]
+    exports: [
+        PageNotFoundComponent,
+        DatatableComponent,
+        GridCardsComponent,
+        CarouselComponent,
+        ButtonsToolbarComponent
+    ]
 })
 export class SharedModule {
 }

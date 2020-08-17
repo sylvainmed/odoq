@@ -1,0 +1,12 @@
+@import '../../../../assets/style/_variables.scss';
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: $xbig-padding 0;
+
+  > button {
+    margin-left: $xbig-margin;
+  }
+
+}

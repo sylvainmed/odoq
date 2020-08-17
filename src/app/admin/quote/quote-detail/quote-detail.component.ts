@@ -7,6 +7,7 @@ import {Theme} from '../../../shared/model/theme.model';
 import {MatChipInputEvent} from '@angular/material/chips';
 import {QuoteService} from '../../../shared/service/quote.service';
 import {ToasterService} from '../../../shared/service/toaster.service';
+import {TraductionService} from '../../../shared/service/traduction.service';
 
 @Component({
   selector: 'app-quote-detail',
@@ -22,8 +23,9 @@ export class QuoteDetailComponent extends AbstractDetailComponent<Quote> impleme
               protected readonly router: Router,
               protected readonly fb: FormBuilder,
               private readonly quoteService: QuoteService,
-              protected readonly toasterService: ToasterService) {
-    super(activatedRoute, router, fb, toasterService);
+              protected readonly toasterService: ToasterService,
+              protected readonly traductionService: TraductionService) {
+    super(activatedRoute, router, fb, toasterService, traductionService);
     this.service = quoteService;
     this.listeUrl = 'admin/quote';
   }

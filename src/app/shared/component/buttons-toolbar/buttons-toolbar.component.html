@@ -1,0 +1,8 @@
+<div class="buttons-container">
+  <button *ngIf="!isCreation" mat-stroked-button color="accent"
+          (click)="deleteEvent.emit()">{{ 'odoq.shared.button.delete' | translate}}</button>
+  <button *ngIf="!isCreation" mat-raised-button [disabled]="!isDirtyValid"
+          (click)="cancelEvent.emit()">{{ 'odoq.shared.button.cancel' | translate}}</button>
+  <button mat-raised-button color="primary" [disabled]="!isDirtyValid"
+          (click)="saveEvent.emit()">{{ (isCreation ? 'odoq.shared.button.create' : 'odoq.shared.button.update') | translate}}</button>
+</div>
