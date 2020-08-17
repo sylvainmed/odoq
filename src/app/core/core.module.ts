@@ -16,7 +16,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {SearchBarComponent} from './search/search-bar/search-bar.component';
-import {httpInterceptorProviders} from './interceptors/interceptors';
 
 
 @NgModule({
@@ -24,7 +23,6 @@ import {httpInterceptorProviders} from './interceptors/interceptors';
   imports: [
     CommonModule,
 
-    CoreRoutingModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
@@ -33,10 +31,8 @@ import {httpInterceptorProviders} from './interceptors/interceptors';
     TranslateModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
-  ],
-  providers: [
-    httpInterceptorProviders
+    FormsModule,
+    CoreRoutingModule
   ]
 })
 export class CoreModule {

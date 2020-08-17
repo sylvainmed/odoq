@@ -6,8 +6,8 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {AppRoutingModule} from './app-routing.module';
-import {CoreModule} from './core/core.module';
-import {AppConfService} from './core/services/app-conf.service';
+import {AppConfService} from './shared/service/app-conf.service';
+import {httpInterceptorProviders} from './shared/interceptors/interceptors';
 
 export function initializeApp(appConfig: AppConfService) {
   return () => appConfig.getConf();
@@ -25,7 +25,6 @@ export function httpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    CoreModule,
 
     TranslateModule.forRoot({
       loader: {
@@ -44,7 +43,8 @@ export function httpLoaderFactory(http: HttpClient): TranslateHttpLoader {
       provide: APP_INITIALIZER,
       useFactory: initializeApp,
       deps: [AppConfService], multi: true
-    }
+    },
+    httpInterceptorProviders,
   ],
   bootstrap: [AppComponent]
 })

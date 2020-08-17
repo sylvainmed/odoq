@@ -1,0 +1,27 @@
+@import '../../../assets/style/_variables.scss';
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.logo-container {
+  cursor: pointer;
+  outline: none;
+  line-height: 0;
+  min-width: 30px;
+  min-height: 30px;
+  height: 50px;
+  width: 50px;
+}
+
+.admin-container {
+  display: flex;
+
+  .admin-menu {
+  }
+
+  .admin-content {
+    padding: $xbig-padding;
+    width: 100%;
+  }
+}

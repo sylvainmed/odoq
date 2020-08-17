@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {AbstractOdoqService} from '../../service/abstract-odoq.service';
 
 @Component({
   selector: 'app-datatable',
@@ -7,9 +8,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatatableComponent implements OnInit {
 
-  constructor() { }
+  @Input() service: AbstractOdoqService<any>;
 
-  ngOnInit(): void {
+  @Output() selectedItemChanged: EventEmitter<any> = new EventEmitter<any>();
+
+  displayedColumns = ['id', 'title', 'content'];
+
+  items: Array<any>;
+
+  constructor() {
+  }
+
+  ngOnInit() {
+    this.loadData();
+    // SEULEMENT POUR TEST EN DEV =>
+    this.items = [{
+      id: 1,
+      title: 'Molly Ivins',
+      content: 'La satire est l\'arme des faibles contre les puissants.'
+    },
+      {
+        id: 2,
+        title: 'Winston Churchill',
+        content: 'En temps de guerre, la vérité est si précieuse qu\'elle devrait toujours être protégée par un rempart de mensonges.'
+      }];
+  }
+
+  /**
+   * Sélectionne un objet dans la datatable et l'émet en output
+   * @param rowSelected
+   */
+  clickRow(rowSelected) {
+    this.selectedItemChanged.emit(rowSelected);
+  }
+
+  loadData() {
+    this.service.search().subscribe(res => {
+      this.items = res;
+    });
   }
 
 }

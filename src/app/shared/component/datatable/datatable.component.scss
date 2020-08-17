@@ -1,0 +1,13 @@
+@import '../../../../assets/style/_variables.scss';
+
+table {
+  width: 100%;
+}
+
+.table-row {
+  cursor: pointer;
+}
+
+.table-row:hover {
+  background-color: $primary;
+}

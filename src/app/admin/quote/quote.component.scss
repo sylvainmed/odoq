@@ -1,0 +1,14 @@
+@import '../../../assets/style/_variables.scss';
+
+.quote-container {
+  display: flex;
+
+  .quote-list {
+    flex: 30%;
+  }
+
+  .quote-detail {
+    flex: 70%;
+    margin-left: $xbig-margin;
+  }
+}

@@ -26,4 +26,8 @@ export class AbstractOdoqService<T> {
   create(o: T): Observable<T> {
     return this._http.post<T>(`${this.baseUrl}`, o);
   }
+
+  update(o: T): Observable<T> {
+    return this._http.put<T>(`${this.baseUrl}`, o);
+  }
 }

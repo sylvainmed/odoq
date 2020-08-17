@@ -1,4 +1,4 @@
 {
-  "odoqApiRest": "http://localhost:4200",
+  "odoqApiRest": "http://localhost:4200/api",
   "timezone": "UTC"
 }

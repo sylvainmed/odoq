@@ -1,14 +1,22 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {QuoteListeComponent} from './quote/quote-liste/quote-liste.component';
-
+import {QuoteComponent} from './quote/quote.component';
+import {QuoteDetailComponent} from './quote/quote-detail/quote-detail.component';
 
 const routes: Routes = [{
   path: '', component: DashboardComponent,
   children: [{
     path: 'quote',
-    component: QuoteListeComponent
+    component: QuoteComponent,
+    children: [
+      {
+        path: 'add',
+        component: QuoteDetailComponent
+      }, {
+        path: ':id',
+        component: QuoteDetailComponent
+      }]
   }]
 }];
 

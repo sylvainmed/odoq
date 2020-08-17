@@ -8,6 +8,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {CarouselComponent} from './component/carousel/carousel.component';
 import { QuoteCardComponent } from './component/quote-card/quote-card.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,13 @@ import { QuoteCardComponent } from './component/quote-card/quote-card.component'
     CarouselComponent,
     QuoteCardComponent
   ],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule
-  ],
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatButtonModule,
+        MatIconModule,
+        MatTableModule
+    ],
   exports: [
     PageNotFoundComponent,
     DatatableComponent,

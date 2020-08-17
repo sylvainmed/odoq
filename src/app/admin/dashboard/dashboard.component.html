@@ -1,1 +1,19 @@
-<p>dashboard works!</p>
+<mat-toolbar color="primary" id="admin-toolbar">
+  <div class="logo-container" routerLink="/">
+    <img src="../../../assets/img/logo/100x100.svg" [title]="'odoq.template.logo.title' | translate">
+  </div>
+  <button mat-icon-button (click)="snav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="spacer"></span>
+</mat-toolbar>
+
+<mat-sidenav-container id="admin-container" class="admin-container">
+  <mat-sidenav #snav [mode]="'side'" [(opened)]="menuOpened" [disableClose]="true">
+    <app-admin-menu></app-admin-menu>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="admin-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
