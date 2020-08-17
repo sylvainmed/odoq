@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {QuoteComponent} from './quote/quote.component';
 import {QuoteDetailComponent} from './quote/quote-detail/quote-detail.component';
+import {QuoteResolver} from '../shared/resolver/quote.resolver';
 
 const routes: Routes = [{
   path: '', component: DashboardComponent,
@@ -15,7 +16,10 @@ const routes: Routes = [{
         component: QuoteDetailComponent
       }, {
         path: ':id',
-        component: QuoteDetailComponent
+        component: QuoteDetailComponent,
+        resolve: {
+          objet: QuoteResolver
+        },
       }]
   }]
 }];
