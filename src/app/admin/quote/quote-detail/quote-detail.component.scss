@@ -1,5 +1,11 @@
 @import '../../../../assets/style/_variables.scss';
 
-.quote-form{
+.quote-form {
   padding: $xbig-padding;
+  display: flex;
+  flex-direction: column;
+
+  .quote-upvote-icon {
+    vertical-align: middle;
+  }
 }

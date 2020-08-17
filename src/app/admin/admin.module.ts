@@ -14,6 +14,11 @@ import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import {QuoteDetailComponent} from './quote/quote-detail/quote-detail.component';
 import {SharedModule} from '../shared/shared.module';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 @NgModule({
@@ -25,21 +30,25 @@ import {SharedModule} from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
+    TranslateModule,
 
     MatToolbarModule,
-    TranslateModule,
     MatFormFieldModule,
+    MatInputModule,
     MatIconModule,
     MatButtonModule,
-
     MatSidenavModule,
     MatListModule,
     MatTableModule,
-    SharedModule,
+    ReactiveFormsModule,
 
+    SharedModule,
 
     // /!\ à laisser en dernier !
     AdminRoutingModule,
+    MatDatepickerModule,
+    MatChipsModule,
+    MatAutocompleteModule
   ]
 })
 export class AdminModule {

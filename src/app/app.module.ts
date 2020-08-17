@@ -9,6 +9,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppConfService} from './shared/service/app-conf.service';
 import {httpInterceptorProviders} from './shared/interceptors/interceptors';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatMomentDateModule} from '@angular/material-moment-adapter';
 
 export function initializeApp(appConfig: AppConfService) {
   return () => appConfig.getConf();
@@ -27,6 +28,7 @@ export function httpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     BrowserAnimationsModule,
     HttpClientModule,
     MatSnackBarModule,
+    MatMomentDateModule,
 
     TranslateModule.forRoot({
       loader: {

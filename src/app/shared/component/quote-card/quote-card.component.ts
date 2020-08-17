@@ -1,18 +1,13 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Quote} from '../../model/quote.model';
 
 @Component({
   selector: 'app-quote-card',
   templateUrl: './quote-card.component.html',
   styleUrls: ['./quote-card.component.scss']
 })
-export class QuoteCardComponent implements OnInit {
+export class QuoteCardComponent {
 
-  @Input() quote: any;
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
+  @Input() quote: Quote;
 
 }
