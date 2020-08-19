@@ -1,5 +1,5 @@
 <mat-selection-list #shoes [multiple]="false">
-  <mat-list-option *ngFor="let shoe of itemsMenu" [value]="shoe" [routerLink]="shoe.routerLink">
-    {{shoe.name}}
+  <mat-list-option *ngFor="let item of itemsMenu" [value]="item" [routerLink]="item.routerLink">
+    {{item.name | translate}}
   </mat-list-option>
 </mat-selection-list>

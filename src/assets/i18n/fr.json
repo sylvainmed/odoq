@@ -32,6 +32,12 @@
       }
     },
     "admin": {
+      "menu": {
+        "dashboard": "Dashboard",
+        "quote": "Quotes",
+        "author": "Auteur",
+        "theme": "Thèmes"
+      },
       "template": {
       },
       "detail": {
@@ -53,6 +59,8 @@
             "label": "Citation"
           }
         }
+      },
+      "theme": {
       }
     }
   }

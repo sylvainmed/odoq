@@ -1,0 +1,14 @@
+<div class="admin-form mat-elevation-z1" [formGroup]="formGroup">
+
+  <mat-form-field>
+    <mat-label>{{ 'odoq.admin.theme.detail.name.label' |translate}}</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+
+</div>
+
+<app-buttons-toolbar [isDirtyValid]="formGroup.valid && formGroup.dirty"
+                     [isCreation]="isCreation"
+                     (cancelEvent)="resetForm()"
+                     (deleteEvent)="delete()"
+                     (saveEvent)="save()"></app-buttons-toolbar>

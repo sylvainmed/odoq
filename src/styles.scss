@@ -26,3 +26,29 @@ body {
 .toaster-info {
   background-color: $primary !important;
 }
+
+.admin-container {
+  display: flex;
+
+  .admin-actions {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .admin-list {
+    flex: 30%;
+  }
+
+  .admin-detail {
+    flex: 70%;
+    margin-left: $xbig-margin;
+
+    .admin-form {
+      padding: $xbig-padding;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+

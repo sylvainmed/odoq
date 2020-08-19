@@ -25,7 +25,6 @@ export class QuoteResolver implements Resolve<Quote> {
             if (quote) {
               return of(quote);
             } else {
-              console.log('unresolved');
               return this.resolverUtilService.handleUnresolved('quote', ['admin/quote', id]);
             }
           })

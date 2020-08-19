@@ -88,6 +88,7 @@ export abstract class AbstractDetailComponent<T> implements OnInit, OnDestroy {
     }
   }
 
+  /** action de suppression de l'objet */
   delete() {
     this.service.delete(this.objet['id']).subscribe(() => {
       this.objectDeleted.emit(this.objet);

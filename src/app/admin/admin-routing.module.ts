@@ -4,6 +4,9 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {QuoteComponent} from './quote/quote.component';
 import {QuoteDetailComponent} from './quote/quote-detail/quote-detail.component';
 import {QuoteResolver} from '../shared/resolver/quote.resolver';
+import {ThemeComponent} from './theme/theme.component';
+import {ThemeDetailComponent} from './theme/theme-detail/theme-detail.component';
+import {ThemeResolver} from '../shared/resolver/theme.resolver';
 
 const routes: Routes = [{
   path: '', component: DashboardComponent,
@@ -21,7 +24,22 @@ const routes: Routes = [{
           objet: QuoteResolver
         },
       }]
-  }]
+  },
+    {
+      path: 'theme',
+      component: ThemeComponent,
+      children: [
+        {
+          path: 'add',
+          component: ThemeDetailComponent
+        }, {
+          path: ':id',
+          component: ThemeDetailComponent,
+          resolve: {
+            objet: ThemeResolver
+          },
+        }]
+    }]
 }];
 
 @NgModule({

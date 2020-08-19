@@ -30,11 +30,6 @@ export class QuoteDetailComponent extends AbstractDetailComponent<Quote> impleme
     this.listeUrl = 'admin/quote';
   }
 
-  ngOnInit() {
-    super.ngOnInit();
-    this.initForm();
-  }
-
   initForm() {
     super.initForm();
     this.formGroup.addControl('id', this.fb.control(this.objet ? this.objet.id : null));

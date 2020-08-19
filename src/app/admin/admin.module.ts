@@ -18,7 +18,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatChipsModule} from '@angular/material/chips';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {ThemeComponent} from './theme/theme.component';
+import {ThemeDetailComponent} from './theme/theme-detail/theme-detail.component';
 
 
 @NgModule({
@@ -26,7 +27,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     DashboardComponent,
     QuoteComponent,
     AdminMenuComponent,
-    QuoteDetailComponent
+    QuoteDetailComponent,
+    ThemeComponent,
+    ThemeDetailComponent
   ],
   imports: [
     CommonModule,
@@ -44,11 +47,11 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
     SharedModule,
 
-    // /!\ à laisser en dernier !
-    AdminRoutingModule,
     MatDatepickerModule,
     MatChipsModule,
-    MatAutocompleteModule
+
+    // /!\ à laisser en dernier !
+    AdminRoutingModule,
   ]
 })
 export class AdminModule {
