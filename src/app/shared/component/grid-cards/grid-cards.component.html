@@ -1,5 +1,5 @@
-<div class="masonry">
-  <div *ngFor="let card of cardsList" class="masonry-brick masonry-brick-v">
+<div #masonry class="masonry">
+  <div *ngFor="let card of cardsList" #masonryBrick class="masonry-brick masonry-brick-v">
     <app-quote-card [quote]="card"></app-quote-card>
   </div>
 </div>

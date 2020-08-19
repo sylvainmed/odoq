@@ -61,6 +61,11 @@
         }
       },
       "theme": {
+        "detail": {
+          "name": {
+            "label": "Nom du thème"
+          }
+        }
       }
     }
   }
