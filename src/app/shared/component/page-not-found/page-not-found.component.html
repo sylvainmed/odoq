@@ -1,1 +1,14 @@
-<p>404 page-not-found!</p>
+<mat-toolbar color="primary">
+  <div class="logo-container" routerLink="/">
+    <img src="../../../assets/img/logo/100x100.svg" [title]="'odoq.template.logo.title' | translate">
+  </div>
+</mat-toolbar>
+
+<div class="not-found-container">
+  <div class="not-fount-message">
+    {{ 'odoq.shared.notFound.message' | translate}}
+  </div>
+  <div class="not-fount-message">
+    <a routerLink="/">{{ 'odoq.shared.notFound.messageLink' | translate}}</a>
+  </div>
+</div>

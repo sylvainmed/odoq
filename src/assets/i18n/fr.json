@@ -20,6 +20,10 @@
           "success": "Suppression OK",
           "error": "Erreur dans la suppression"
         }
+      },
+      "notFound": {
+        "message": "Oops... Cette pas n'existe pas.",
+        "messageLink": "Retourner à la page d'accueil"
       }
     },
     "template": {

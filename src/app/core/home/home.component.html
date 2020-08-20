@@ -2,3 +2,5 @@
               (beforeEvent)="handleLastQuote()"
               (nextEvent)="handleNextQuote()"></app-carousel>
 <app-grid-cards [cardsList]="allCards"></app-grid-cards>
+
+<app-loader *ngIf="isLoading"></app-loader>

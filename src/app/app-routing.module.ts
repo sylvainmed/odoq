@@ -15,12 +15,6 @@ const routes: Routes = [
     loadChildren: () => import('./core/core.module').then(m => m.CoreModule),
     // canActivateChild: [AuthGuard]
   },
-  /*{
-    path: 'facture',
-    loadChildren: () => import('./facture/facture.module').then(m => m.FactureModule),
-    canActivateChild: [AuthGuard]
-  },*/
-  // {path: '', redirectTo: '/', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
 ];
 

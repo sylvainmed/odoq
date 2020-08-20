@@ -13,6 +13,9 @@ import {ButtonsToolbarComponent} from './component/buttons-toolbar/buttons-toolb
 import {TranslateModule} from '@ngx-translate/core';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import { LoaderComponent } from './component/loader/loader.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import {MatSortModule} from '@angular/material/sort';
     GridCardsComponent,
     CarouselComponent,
     QuoteCardComponent,
-    ButtonsToolbarComponent
+    ButtonsToolbarComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
@@ -31,15 +35,18 @@ import {MatSortModule} from '@angular/material/sort';
     MatTableModule,
     TranslateModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatToolbarModule,
+    RouterModule
   ],
-  exports: [
-    PageNotFoundComponent,
-    DatatableComponent,
-    GridCardsComponent,
-    CarouselComponent,
-    ButtonsToolbarComponent
-  ]
+    exports: [
+        PageNotFoundComponent,
+        DatatableComponent,
+        GridCardsComponent,
+        CarouselComponent,
+        ButtonsToolbarComponent,
+        LoaderComponent
+    ]
 })
 export class SharedModule {
 }

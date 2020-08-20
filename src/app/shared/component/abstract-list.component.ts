@@ -11,7 +11,9 @@ export abstract class AbstractListComponent<T> implements OnDestroy {
 
   subscriptions = new Subscription();
 
-  protected constructor(protected readonly router: Router,
+  keyTraduction: string;
+
+    protected constructor(protected readonly router: Router,
                         protected readonly activatedRoute: ActivatedRoute) {
   }
 

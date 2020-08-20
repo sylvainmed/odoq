@@ -23,6 +23,7 @@ $color-text: rgba(0, 0, 0, 0.87);
 // Create your Sass color vars (will be available in all the project)
 $primary: mat-color(mat-palette($mat-teal));
 $accent: mat-color(mat-palette($mat-gray));
+$accent-light: mat-color(mat-palette($mat-gray, A200));
 
 $success: mat-color(mat-palette($mat-green));
 $error: mat-color(mat-palette($mat-red));

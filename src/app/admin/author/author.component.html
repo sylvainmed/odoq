@@ -4,7 +4,7 @@
     <app-datatable #datatable
                    [service]="authorService"
                    [displayedColumns]="['name', 'fictional', 'source', 'function']"
-                   [keyTraduction]="'odoq.admin.author.table'"
+                   [keyTraduction]="keyTraduction + '.table'"
                    (selectedItemChanged)="navigateToDetail($event)">
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> Id</th>
@@ -14,10 +14,9 @@
     </app-datatable>
   </div>
 
-
   <div class="admin-actions">
     <button mat-icon-button aria-label="Add object" (click)="navigateToCreation()"
-            [title]="'odoq.admin.auhtor.list.add' | translate">
+            [title]="keyTraduction+'.list.add' | translate">
       <mat-icon>add</mat-icon>
     </button>
   </div>

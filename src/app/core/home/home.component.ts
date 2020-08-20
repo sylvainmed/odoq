@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
 
   mainQuote: any;
 
+  isLoading: boolean = true;
+
   allCards: Array<Quote> = [];
 
   ngOnInit(): void {
@@ -36,8 +38,10 @@ export class HomeComponent implements OnInit {
 
   initQuotes() {
     this.quoteService.search().subscribe(res => {
-      this.allCards = res;
-    });
+        this.allCards = res;
+      },
+      (err) => (console.log(err)),
+      () => this.isLoading = false);
   }
 
   /**

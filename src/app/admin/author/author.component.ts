@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AbstractListComponent} from '../../shared/component/abstract-list.component';
-import {Theme} from '../../shared/model/theme.model';
-import {ThemeService} from '../../shared/service/theme.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Author} from '../../shared/model/author.model';
 import {AuthorService} from '../../shared/service/author.service';
@@ -17,6 +15,7 @@ export class AuthorComponent extends AbstractListComponent<Author> implements On
               protected readonly router: Router,
               protected readonly activatedRoute: ActivatedRoute) {
     super(router, activatedRoute);
+    this.keyTraduction = 'odoq.admin.author';
   }
 
   ngOnInit(): void {
