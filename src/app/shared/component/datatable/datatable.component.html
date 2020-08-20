@@ -1,11 +1,14 @@
-<table mat-table [dataSource]="items" class="mat-elevation-z1">
+<table mat-table [dataSource]="items" matSort class="mat-elevation-z1">
 
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> Id</th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  <ng-container *ngFor="let column of displayedColumns; index as i" [matColumnDef]="column">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef>{{ keyTraduction + '.' + column | translate }}</th>
+    <td mat-cell *matCellDef="let row"> {{row[column]}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="clickRow(row)" class="table-row"></tr>
+
 </table>
+<mat-paginator [pageSizeOptions]="[10, 20, 50]" [showFirstLastButtons]="false"></mat-paginator>
+
 

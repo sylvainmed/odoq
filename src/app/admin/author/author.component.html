@@ -3,7 +3,14 @@
   <div class="admin-list">
     <app-datatable #datatable
                    [service]="authorService"
+                   [displayedColumns]="['name', 'fictional', 'source', 'function']"
+                   [keyTraduction]="'odoq.admin.author.table'"
                    (selectedItemChanged)="navigateToDetail($event)">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id</th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
     </app-datatable>
   </div>
 

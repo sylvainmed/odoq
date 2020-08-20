@@ -6,16 +6,16 @@
   </mat-form-field>
 
   <div class="checkbox-container">
-    <mat-checkbox class="example-margin" matInput
+    <mat-checkbox class="example-margin"
                   formControlName="fictional">{{ 'odoq.admin.author.detail.fictional.label' |translate}}</mat-checkbox>
   </div>
-  <mat-form-field>
 
+  <mat-form-field *ngIf="formGroup.controls['fictional'].value">
     <mat-label>{{ 'odoq.admin.author.detail.source.label' |translate}}</mat-label>
     <input matInput formControlName="source">
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field *ngIf="!formGroup.controls['fictional'].value">
     <mat-label>{{ 'odoq.admin.author.detail.function.label' |translate}}</mat-label>
     <input matInput formControlName="function">
   </mat-form-field>

@@ -3,6 +3,8 @@
   <div class="admin-list">
     <app-datatable #datatable
                    [service]="quoteService"
+                   [displayedColumns]="['dateCreation', 'content', 'author.name']"
+                   [keyTraduction]="'odoq.admin.quote.table'"
                    (selectedItemChanged)="navigateToDetail($event)"></app-datatable>
   </div>
 

@@ -15,8 +15,8 @@ export class AbstractOdoqService<T> {
     this._http = http;
   }
 
-  search(): Observable<Array<T>> {
-    return this._http.get<Array<T>>(`${this.baseUrl}`);
+  search(param?): Observable<Array<T>> {
+    return this._http.get<Array<T>>(`${this.baseUrl}`, {params: param});
   }
 
   get(id: number): Observable<T> {

@@ -9,8 +9,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {CarouselComponent} from './component/carousel/carousel.component';
 import {QuoteCardComponent} from './component/quote-card/quote-card.component';
 import {MatTableModule} from '@angular/material/table';
-import { ButtonsToolbarComponent } from './component/buttons-toolbar/buttons-toolbar.component';
+import {ButtonsToolbarComponent} from './component/buttons-toolbar/buttons-toolbar.component';
 import {TranslateModule} from '@ngx-translate/core';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -27,15 +29,17 @@ import {TranslateModule} from '@ngx-translate/core';
     MatButtonModule,
     MatIconModule,
     MatTableModule,
-    TranslateModule
+    TranslateModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
-    exports: [
-        PageNotFoundComponent,
-        DatatableComponent,
-        GridCardsComponent,
-        CarouselComponent,
-        ButtonsToolbarComponent
-    ]
+  exports: [
+    PageNotFoundComponent,
+    DatatableComponent,
+    GridCardsComponent,
+    CarouselComponent,
+    ButtonsToolbarComponent
+  ]
 })
 export class SharedModule {
 }

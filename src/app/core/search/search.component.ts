@@ -26,7 +26,10 @@ export class SearchComponent implements OnInit {
 
   handleSearch(value: string) {
     this.valueToSearch = value;
-    this.quoteService.search().pipe(take(1))
+    const params = {
+      content: this.valueToSearch
+    };
+    this.quoteService.search(params).pipe(take(1))
       .subscribe(result => {
         this.resultsSearch = result;
       });

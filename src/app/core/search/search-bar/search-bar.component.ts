@@ -18,10 +18,11 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {
     // on regarde si il ya une value à chercher dans la route
     // (normalement executée une seule fois grace a la reuse strategy)
-    // puis on écoute les changements d'url du coup
     if (this.location.getState()) {
       this.value = this.location.getState()['valueToSearch'];
+      this.handleSearch();
     }
+    // puis on écoute les changements d'url du coup
     this.location.onUrlChange((url, state) => {
       if (state['valueToSearch']) {
         this.value = state['valueToSearch'];

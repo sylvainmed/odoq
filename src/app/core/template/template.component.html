@@ -8,8 +8,8 @@
   <button mat-flat-button color="primary"
           routerLink="/admin">Admin
   </button>
-  <ng-container *ngIf="!hideSearchField">
-    <mat-form-field class="toolbar-input-search" [floatLabel]="'never'">
+  <div class="toolbar-input-search" [hidden]="hideSearchField">
+    <mat-form-field [floatLabel]="'never'">
       <input matInput type="text" [(ngModel)]="valueToSearch" placeholder="Rechercher un thème ou un auteur"
              (keydown.enter)="handleSearch()">
       <button mat-button *ngIf="valueToSearch" matSuffix mat-icon-button aria-label="Reset" (click)="valueToSearch=''">
@@ -20,7 +20,7 @@
             [title]="'odoq.template.menu.search' | translate" (click)="handleSearch()">
       <mat-icon class="toolbar-button-icon-search">search</mat-icon>
     </button>
-  </ng-container>
+  </div>
   <span class="spacer"></span>
   <button mat-icon-button>
     <mat-icon>menu</mat-icon>

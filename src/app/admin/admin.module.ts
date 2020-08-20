@@ -20,6 +20,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatChipsModule} from '@angular/material/chips';
 import {ThemeComponent} from './theme/theme.component';
 import {ThemeDetailComponent} from './theme/theme-detail/theme-detail.component';
+import { AuthorComponent } from './author/author.component';
+import { AuthorDetailComponent } from './author/author-detail/author-detail.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -29,30 +32,33 @@ import {ThemeDetailComponent} from './theme/theme-detail/theme-detail.component'
     AdminMenuComponent,
     QuoteDetailComponent,
     ThemeComponent,
-    ThemeDetailComponent
+    ThemeDetailComponent,
+    AuthorComponent,
+    AuthorDetailComponent
   ],
-  imports: [
-    CommonModule,
-    TranslateModule,
+    imports: [
+        CommonModule,
+        TranslateModule,
 
-    MatToolbarModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
-    MatTableModule,
-    ReactiveFormsModule,
+        MatToolbarModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatListModule,
+        MatTableModule,
+        ReactiveFormsModule,
 
-    SharedModule,
+        SharedModule,
 
-    MatDatepickerModule,
-    MatChipsModule,
+        MatDatepickerModule,
+        MatChipsModule,
 
-    // /!\ à laisser en dernier !
-    AdminRoutingModule,
-  ]
+        // /!\ à laisser en dernier !
+        AdminRoutingModule,
+        MatCheckboxModule,
+    ]
 })
 export class AdminModule {
 }

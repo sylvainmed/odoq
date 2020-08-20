@@ -58,6 +58,14 @@
           "content": {
             "label": "Citation"
           }
+        },
+        "table": {
+          "id": "Id",
+          "content": "Citation",
+          "author": {
+            "name": "Auteur"
+          },
+          "dateCreation": "Date de création"
         }
       },
       "theme": {
@@ -65,6 +73,10 @@
           "name": {
             "label": "Nom du thème"
           }
+        },
+        "table": {
+          "id": "Id",
+          "name": "Nom"
         }
       },
       "author": {
@@ -81,6 +93,13 @@
           "function": {
             "label": "Fonction/Métier"
           }
+        },
+        "table": {
+          "id": "Id",
+          "name": "Nom",
+          "fictional": "Fictif ?",
+          "source": "Source",
+          "function": "Fonction"
         }
       }
     }

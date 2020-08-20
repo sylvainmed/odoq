@@ -3,6 +3,8 @@
   <div class="admin-list">
     <app-datatable #datatable
                    [service]="themeService"
+                   [keyTraduction]="'odoq.admin.theme.table'"
+                   [displayedColumns]="['name']"
                    (selectedItemChanged)="navigateToDetail($event)"></app-datatable>
   </div>
 
