@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {Location} from '@angular/common';
+import {QuoteService} from '../../shared/service/quote.service';
+import {take} from 'rxjs/operators';
+import {Quote} from '../../shared/model/quote.model';
 
 @Component({
   selector: 'app-search',
@@ -8,13 +12,24 @@ import {Router} from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
-  resultsSearch: Array<any> = [];
+  resultsSearch: Array<Quote> = [];
 
-  constructor(private router: Router) {
+  valueToSearch: string;
+
+  constructor(private readonly router: Router,
+              private readonly quoteService: QuoteService,
+              private readonly location: Location) {
   }
 
   ngOnInit() {
+  }
 
+  handleSearch(value: string) {
+    this.valueToSearch = value;
+    this.quoteService.search().pipe(take(1))
+      .subscribe(result => {
+        this.resultsSearch = result;
+      });
   }
 
 }

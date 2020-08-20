@@ -7,6 +7,9 @@ import {QuoteResolver} from '../shared/resolver/quote.resolver';
 import {ThemeComponent} from './theme/theme.component';
 import {ThemeDetailComponent} from './theme/theme-detail/theme-detail.component';
 import {ThemeResolver} from '../shared/resolver/theme.resolver';
+import {AuthorComponent} from './author/author.component';
+import {AuthorResolver} from '../shared/resolver/author.resolver';
+import {AuthorDetailComponent} from './author/author-detail/author-detail.component';
 
 const routes: Routes = [{
   path: '', component: DashboardComponent,
@@ -37,6 +40,21 @@ const routes: Routes = [{
           component: ThemeDetailComponent,
           resolve: {
             objet: ThemeResolver
+          },
+        }]
+    },
+    {
+      path: 'author',
+      component: AuthorComponent,
+      children: [
+        {
+          path: 'add',
+          component: AuthorDetailComponent
+        }, {
+          path: ':id',
+          component: AuthorDetailComponent,
+          resolve: {
+            objet: AuthorResolver
           },
         }]
     }]

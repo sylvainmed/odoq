@@ -12,7 +12,7 @@ export class DatatableComponent implements OnInit {
 
   @Output() selectedItemChanged: EventEmitter<any> = new EventEmitter<any>();
 
-  displayedColumns = ['id', 'title', 'content'];
+  displayedColumns = ['id'];
 
   items: Array<any>;
 

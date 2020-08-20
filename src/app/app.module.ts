@@ -10,6 +10,8 @@ import {AppConfService} from './shared/service/app-conf.service';
 import {httpInterceptorProviders} from './shared/interceptors/interceptors';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatMomentDateModule} from '@angular/material-moment-adapter';
+import {RouteReuseStrategy} from '@angular/router';
+import {AppRoutingCache} from './app-routing-cache';
 
 export function initializeApp(appConfig: AppConfService) {
   return () => appConfig.getConf();
@@ -43,6 +45,7 @@ export function httpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     {provide: LOCALE_ID, useValue: 'fr'},
     TranslateModule,
     AppConfService,
+    {provide: RouteReuseStrategy, useClass: AppRoutingCache},
     {
       provide: APP_INITIALIZER,
       useFactory: initializeApp,

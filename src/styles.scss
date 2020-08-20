@@ -27,12 +27,17 @@ body {
   background-color: $primary !important;
 }
 
+.checkbox-container {
+  margin: $big-margin 0;
+}
+
 .admin-container {
   display: flex;
 
   .admin-actions {
     display: flex;
     flex-direction: column;
+    margin: 0 $xbig-margin;
   }
 
   .admin-list {
@@ -41,7 +46,6 @@ body {
 
   .admin-detail {
     flex: 70%;
-    margin-left: $xbig-margin;
 
     .admin-form {
       padding: $xbig-padding;

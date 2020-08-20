@@ -1,4 +1,5 @@
 import {Theme} from './theme.model';
+import {Author} from './author.model';
 
 export interface Quote {
 
@@ -8,12 +9,6 @@ export interface Quote {
   /** date de création de l'objet en base */
   dateCreation: Date;
 
-  /** titre de la quote */
-  title?: string;
-
-  /** sous titre */
-  subTitle?: string;
-
   /** contenu */
   content: string;
 
@@ -21,7 +16,7 @@ export interface Quote {
   date?: Date;
 
   /** auteur ou speaker de la quote */
-  author: string;
+  author: Author;
 
   /** source de la quote */
   source?: string;

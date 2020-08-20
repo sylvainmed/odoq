@@ -16,7 +16,15 @@
   align-items: center;
 
   .search-bar {
+    background-color: $white;
     margin: $xbig-margin;
+    padding: $xsmall-padding $padding;
+    display: flex;
+    flex-direction: row;
+    border-radius: $border-radius;
+    min-width: 100%;
+    font-size: 1.2em;
+    border: $border;
   }
 
 }
@@ -37,4 +45,12 @@
   position: absolute;
   z-index: -1;
   border-radius: $border-radius;
+}
+
+@media screen and (min-width: 1024px) {
+  .search-bar-container {
+    .search-bar {
+      min-width: 50%;
+    }
+  }
 }

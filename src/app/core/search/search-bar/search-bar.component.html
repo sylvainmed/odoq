@@ -1,9 +1,12 @@
 <div class="search-bar-container">
   <div class="search-bar">
-    <input matInput type="text" [(ngModel)]="valueToSearch" placeholder="Rechercher un thème ou un auteur">
-    <button mat-button *ngIf="valueToSearch" matSuffix mat-icon-button aria-label="Reset" (click)="valueToSearch=''">
+    <input matInput type="text" [(ngModel)]="value" placeholder="Rechercher un thème ou un auteur ..."
+           (keydown.enter)="handleSearch()" (keydown.escape)="value=''">
+    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Reset" (click)="value=''">
       <mat-icon>close</mat-icon>
     </button>
-    <mat-icon class="toolbar-button-icon-search" color="primary">search</mat-icon>
+    <button mat-button mat-icon-button type="submit" (click)="handleSearch()">
+      <mat-icon class="toolbar-button-icon-search" color="primary">search</mat-icon>
+    </button>
   </div>
 </div>

@@ -1,18 +1,31 @@
-import {AfterViewInit, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-template',
   templateUrl: './template.component.html',
   styleUrls: ['./template.component.scss']
 })
-export class TemplateComponent implements AfterViewInit {
+export class TemplateComponent implements AfterViewInit, OnInit {
 
-  value: string;
+  valueToSearch: string;
+  hideSearchField: boolean;
+
+  false;
 
   @ViewChild('appContainer') appContainer: ElementRef;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private location: Location) {
+  }
+
+  ngOnInit() {
+    // on regarde si on est sur la page de recherche, si oui on cache le champ de la toolbar
+    this.hideSearchField = this.location.path().includes('/search');
+    // on écoute les changements de route pour cahcer/Afficher le champ de recherche
+    this.location.onUrlChange(url => {
+      this.hideSearchField = url.includes('/search');
+    });
   }
 
   /**
@@ -49,6 +62,6 @@ export class TemplateComponent implements AfterViewInit {
    * Méthode pour gérer la recherche d'une quote dans le champ de la toolbar
    */
   handleSearch() {
-    this.router.navigate(['/search']);
+    this.router.navigate(['/search'], {state: {valueToSearch: this.valueToSearch}});
   }
 }

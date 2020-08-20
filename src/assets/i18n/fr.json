@@ -66,6 +66,22 @@
             "label": "Nom du thème"
           }
         }
+      },
+      "author": {
+        "detail": {
+          "name": {
+            "label": "Nom"
+          },
+          "fictional": {
+            "label": "Est fictif ?"
+          },
+          "source": {
+            "label": "Source"
+          },
+          "function": {
+            "label": "Fonction/Métier"
+          }
+        }
       }
     }
   }

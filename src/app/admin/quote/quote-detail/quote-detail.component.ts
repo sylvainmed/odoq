@@ -34,8 +34,6 @@ export class QuoteDetailComponent extends AbstractDetailComponent<Quote> impleme
     super.initForm();
     this.formGroup.addControl('id', this.fb.control(this.objet ? this.objet.id : null));
     this.formGroup.addControl('author', this.fb.control(this.objet ? this.objet.author : null));
-    this.formGroup.addControl('title', this.fb.control(this.objet ? this.objet.title : null));
-    this.formGroup.addControl('subTitle', this.fb.control(this.objet ? this.objet.subTitle : null));
     this.formGroup.addControl('content', this.fb.control(this.objet ? this.objet.content : null));
     this.formGroup.addControl('date', this.fb.control(this.objet ? this.objet.date : null));
     this.formGroup.addControl('source', this.fb.control(this.objet ? this.objet.source : null));

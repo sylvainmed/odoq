@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,17 +8,31 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  valueToSearch: string;
+  value: string;
 
-  @Output() resultsSearchEmit: EventEmitter<Array<any>> = new EventEmitter<Array<any>>();
+  @Output() resultsSearchEmit: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(private location: Location) {
+  }
 
   ngOnInit(): void {
+    // on regarde si il ya une value à chercher dans la route
+    // (normalement executée une seule fois grace a la reuse strategy)
+    // puis on écoute les changements d'url du coup
+    if (this.location.getState()) {
+      this.value = this.location.getState()['valueToSearch'];
+    }
+    this.location.onUrlChange((url, state) => {
+      if (state['valueToSearch']) {
+        this.value = state['valueToSearch'];
+        this.handleSearch();
+      }
+    });
   }
 
-  handleSearch(){
-    return
+  handleSearch() {
+    if (this.value) {
+      this.resultsSearchEmit.emit(this.value);
+    }
   }
-
 }

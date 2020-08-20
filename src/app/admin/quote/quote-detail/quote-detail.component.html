@@ -6,16 +6,6 @@
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Title</mat-label>
-    <input matInput formControlName="title">
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>subtitle</mat-label>
-    <input matInput formControlName="subTitle">
-  </mat-form-field>
-
-  <mat-form-field>
     <mat-label>{{ 'odoq.admin.quote.detail.content.label' |translate}}</mat-label>
     <textarea matInput formControlName="content"></textarea>
   </mat-form-field>
@@ -33,7 +23,7 @@
   </mat-form-field>
 
   <mat-form-field>
-    <mat-chip-list #chipList aria-label="Fruit selection">
+    <mat-chip-list #chipList aria-label="themes">
       <mat-chip *ngFor="let tag of tags" [selectable]="true"
                 [removable]="true" (removed)="remove(tag)">
         {{tag}}

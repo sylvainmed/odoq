@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, ElementRef, HostListener, Input, OnDestroy, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {Subscription} from 'rxjs';
+import {Quote} from '../../model/quote.model';
 
 @Component({
   selector: 'app-grid-cards',
@@ -13,7 +14,7 @@ export class GridCardsComponent implements AfterViewInit, OnDestroy {
   @ViewChildren('masonryBrick') gridCells: QueryList<ElementRef>;
   @ViewChild('masonry') grid: ElementRef;
 
-  @Input() cardsList: Array<any>;
+  @Input() cardsList: Array<Quote>;
 
   @HostListener('window:resize')
   reloadMasonry() {

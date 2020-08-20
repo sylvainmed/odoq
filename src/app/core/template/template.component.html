@@ -3,21 +3,24 @@
     <img src="../../../assets/img/logo/100x100.svg" [title]="'odoq.template.logo.title' | translate">
   </div>
   <!-- <button mat-flat-button color="primary" routerLink="/">ODOQ</button>-->
-  <mat-form-field id="toolbarContainer" class="toolbar-input-search" [floatLabel]="'never'">
-    <input matInput type="text" [(ngModel)]="value" placeholder="Rechercher un thème ou un auteur">
-    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Reset" (click)="value=''">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
-  <button mat-flat-button class="toolbar-button-search" color="primary"
-          [title]="'odoq.template.menu.search' | translate" (click)="handleSearch()">
-    <mat-icon class="toolbar-button-icon-search">search</mat-icon>
-  </button>
-  <button mat-flat-button color="primary"
+  <button mat-flat-button color="primary" id="toolbarContainer"
           routerLink="/timeline">{{ 'odoq.template.menu.timeline' | translate}}</button>
   <button mat-flat-button color="primary"
           routerLink="/admin">Admin
   </button>
+  <ng-container *ngIf="!hideSearchField">
+    <mat-form-field class="toolbar-input-search" [floatLabel]="'never'">
+      <input matInput type="text" [(ngModel)]="valueToSearch" placeholder="Rechercher un thème ou un auteur"
+             (keydown.enter)="handleSearch()">
+      <button mat-button *ngIf="valueToSearch" matSuffix mat-icon-button aria-label="Reset" (click)="valueToSearch=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-flat-button class="toolbar-button-search" color="primary"
+            [title]="'odoq.template.menu.search' | translate" (click)="handleSearch()">
+      <mat-icon class="toolbar-button-icon-search">search</mat-icon>
+    </button>
+  </ng-container>
   <span class="spacer"></span>
   <button mat-icon-button>
     <mat-icon>menu</mat-icon>

@@ -32,7 +32,6 @@
               "src/assets/style/odoq-style.scss"
             ],
             "scripts": [
-              "./src/assets/js/mansory.js"
             ]
           },
           "configurations": {

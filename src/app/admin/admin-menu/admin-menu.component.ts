@@ -16,6 +16,9 @@ export class AdminMenuComponent implements OnInit {
   }, {
     name: 'odoq.admin.menu.theme',
     routerLink: 'theme'
+  }, {
+    name: 'odoq.admin.menu.author',
+    routerLink: 'author'
   }];
 
   constructor() {

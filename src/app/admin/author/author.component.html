@@ -2,13 +2,15 @@
 
   <div class="admin-list">
     <app-datatable #datatable
-                   [service]="quoteService"
-                   (selectedItemChanged)="navigateToDetail($event)"></app-datatable>
+                   [service]="authorService"
+                   (selectedItemChanged)="navigateToDetail($event)">
+    </app-datatable>
   </div>
+
 
   <div class="admin-actions">
     <button mat-icon-button aria-label="Add object" (click)="navigateToCreation()"
-            [title]="'odoq.admin.quote.list.add' | translate">
+            [title]="'odoq.admin.auhtor.list.add' | translate">
       <mat-icon>add</mat-icon>
     </button>
   </div>
@@ -17,3 +19,4 @@
     <router-outlet (activate)="handleRouteActivate($event)"></router-outlet>
   </div>
 </div>
+
