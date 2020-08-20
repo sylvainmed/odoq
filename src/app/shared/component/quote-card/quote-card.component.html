@@ -1,5 +1,8 @@
 <mat-card class="quote-card">
   <mat-card-content>
+    <p *ngIf="displayDate" class="quote-date" [ngClass]="{'align-right': alignRight}">
+      {{quote.date}}
+    </p>
     <p class="quote-content">
       {{ quote.content }}
     </p>

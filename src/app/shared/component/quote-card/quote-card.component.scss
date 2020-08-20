@@ -1,10 +1,32 @@
 @import '../../../../assets/style/_variables.scss';
 
+mat-card-content {
+  margin-bottom: 0;
+}
+
+.align-right {
+  text-align: right;
+}
+
 .quote-card {
   transition: 0.2s ease;
 
+  .quote-date {
+    font-size: x-large;
+    color: $primary;
+    font-weight: 200;
+  }
+
   .quote-content {
 
+  }
+
+  .quote-content::before {
+    content: open-quote;
+  }
+
+  .quote-content::after {
+    content: close-quote;
   }
 
   .quote-author {

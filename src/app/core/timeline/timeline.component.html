@@ -1,1 +1,8 @@
-<p>timeline works!</p>
+<div class="timeline">
+  <div *ngFor="let quote of quotes; let index = index" class="container"
+       [ngClass]="{'right': index % 2 === 0, 'left': index % 2 !== 0}">
+    <app-quote-card [quote]="quote" [displayDate]="true" [alignRight]="index % 2 !== 0"></app-quote-card>
+  </div>
+</div>
+
+<app-loader *ngIf="isLoading"></app-loader>

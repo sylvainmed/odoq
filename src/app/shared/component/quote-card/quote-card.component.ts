@@ -10,4 +10,7 @@ export class QuoteCardComponent {
 
   @Input() quote: Quote;
 
+  @Input() displayDate: boolean = false;
+
+  @Input() alignRight: boolean = false;
 }

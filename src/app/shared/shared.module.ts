@@ -13,7 +13,7 @@ import {ButtonsToolbarComponent} from './component/buttons-toolbar/buttons-toolb
 import {TranslateModule} from '@ngx-translate/core';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
-import { LoaderComponent } from './component/loader/loader.component';
+import {LoaderComponent} from './component/loader/loader.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {RouterModule} from '@angular/router';
 
@@ -39,14 +39,15 @@ import {RouterModule} from '@angular/router';
     MatToolbarModule,
     RouterModule
   ],
-    exports: [
-        PageNotFoundComponent,
-        DatatableComponent,
-        GridCardsComponent,
-        CarouselComponent,
-        ButtonsToolbarComponent,
-        LoaderComponent
-    ]
+  exports: [
+    PageNotFoundComponent,
+    DatatableComponent,
+    GridCardsComponent,
+    CarouselComponent,
+    ButtonsToolbarComponent,
+    LoaderComponent,
+    QuoteCardComponent
+  ]
 })
 export class SharedModule {
 }
