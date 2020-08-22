@@ -5,9 +5,6 @@
   <!-- <button mat-flat-button color="primary" routerLink="/">ODOQ</button>-->
   <button mat-flat-button color="primary" id="toolbarContainer"
           routerLink="/timeline">{{ 'odoq.template.menu.timeline' | translate}}</button>
-  <button mat-flat-button color="primary"
-          routerLink="/admin">Admin
-  </button>
   <div class="toolbar-input-search" [hidden]="hideSearchField">
     <mat-form-field [floatLabel]="'never'">
       <input matInput type="text" [(ngModel)]="valueToSearch" placeholder="Rechercher un thème ou un auteur"
@@ -22,8 +19,8 @@
     </button>
   </div>
   <span class="spacer"></span>
-  <button mat-icon-button>
-    <mat-icon>menu</mat-icon>
+  <button mat-icon-button routerLink="/admin">
+    <mat-icon>settings</mat-icon>
   </button>
 </mat-toolbar>
 

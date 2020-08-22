@@ -1,3 +1,4 @@
+<mat-paginator [pageSizeOptions]="[10, 20, 50]" [showFirstLastButtons]="false"></mat-paginator>
 <table mat-table [dataSource]="items" matSort class="mat-elevation-z1">
 
   <ng-container *ngFor="let column of displayedColumns; index as i" [matColumnDef]="column">
@@ -9,6 +10,5 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="clickRow(row)" class="table-row"></tr>
 
 </table>
-<mat-paginator [pageSizeOptions]="[10, 20, 50]" [showFirstLastButtons]="false"></mat-paginator>
 
 

@@ -14,7 +14,7 @@
 .timeline::after {
   content: '';
   position: absolute;
-  width: 6px;
+  width: 4px;
   background-color: $primary;
   top: 0;
   bottom: 0;
@@ -84,7 +84,7 @@
 
 /* Fix the circle for containers on the right side */
 .right::after {
-  left: -9px;
+  left: -10px;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
@@ -111,7 +111,7 @@
 
   /* Make sure all circles are at the same spot */
   .left::after, .right::after {
-    left: 15px;
+    left: 20px;
   }
 
   /* Make all right containers behave like the left ones */

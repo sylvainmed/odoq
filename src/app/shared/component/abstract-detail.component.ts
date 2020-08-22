@@ -40,6 +40,7 @@ export abstract class AbstractDetailComponent<T> implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscriptions.add(
       this.activatedRoute.data.subscribe(data => {
+          this.formGroup = this.fb.group([]);
           this.initDataFromRoute(data);
           this.initForm();
         }
@@ -47,7 +48,6 @@ export abstract class AbstractDetailComponent<T> implements OnInit, OnDestroy {
   }
 
   initForm() {
-    this.formGroup = this.fb.group([]);
   }
 
   ngOnDestroy(): void {
@@ -60,6 +60,7 @@ export abstract class AbstractDetailComponent<T> implements OnInit, OnDestroy {
       this.objet = data['objet'];
       this.isCreation = false;
     } else {
+      this.objet = null;
       this.isCreation = true;
     }
   }

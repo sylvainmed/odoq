@@ -2,12 +2,16 @@ import {Component, OnInit} from '@angular/core';
 import {AbstractDetailComponent} from '../../../shared/component/abstract-detail.component';
 import {Quote} from '../../../shared/model/quote.model';
 import {ActivatedRoute, Router} from '@angular/router';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 import {Theme} from '../../../shared/model/theme.model';
-import {MatChipInputEvent} from '@angular/material/chips';
 import {QuoteService} from '../../../shared/service/quote.service';
 import {ToasterService} from '../../../shared/service/toaster.service';
 import {TraductionService} from '../../../shared/service/traduction.service';
+import {Author} from '../../../shared/model/author.model';
+import {AuthorService} from '../../../shared/service/author.service';
+import {ThemeService} from '../../../shared/service/theme.service';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 
 @Component({
   selector: 'app-quote-detail',
@@ -17,12 +21,19 @@ import {TraductionService} from '../../../shared/service/traduction.service';
 export class QuoteDetailComponent extends AbstractDetailComponent<Quote> implements OnInit {
 
   tags: Array<any> = [];
-  themes: Array<Theme> = [];
+
+  allThemes: Array<Theme> = [];
+  themes: Observable<Array<Theme>>;
+
+  allAuthors: Array<Author> = [];
+  authors: Observable<Array<Author>>;
 
   constructor(protected readonly activatedRoute: ActivatedRoute,
               protected readonly router: Router,
               protected readonly fb: FormBuilder,
               private readonly quoteService: QuoteService,
+              private readonly authorService: AuthorService,
+              private readonly themeService: ThemeService,
               protected readonly toasterService: ToasterService,
               protected readonly traductionService: TraductionService) {
     super(activatedRoute, router, fb, toasterService, traductionService);
@@ -30,38 +41,58 @@ export class QuoteDetailComponent extends AbstractDetailComponent<Quote> impleme
     this.listeUrl = 'admin/quote';
   }
 
+  ngOnInit() {
+    super.ngOnInit();
+  }
+
   initForm() {
     super.initForm();
     this.formGroup.addControl('id', this.fb.control(this.objet ? this.objet.id : null));
-    this.formGroup.addControl('author', this.fb.control(this.objet ? this.objet.author : null));
-    this.formGroup.addControl('content', this.fb.control(this.objet ? this.objet.content : null));
+    this.formGroup.addControl('author', this.fb.control(this.objet ? this.objet.author : null, Validators.required));
+    this.formGroup.addControl('content', this.fb.control(this.objet ? this.objet.content : null, Validators.required));
     this.formGroup.addControl('date', this.fb.control(this.objet ? this.objet.date : null));
     this.formGroup.addControl('source', this.fb.control(this.objet ? this.objet.source : null));
+    this.formGroup.addControl('themes', this.fb.control(this.objet ? this.objet.themes : null));
     this.formGroup.addControl('tags', this.fb.control(this.objet ? this.objet.tags : null));
+    this.initAuthors();
+    this.initThemes();
   }
 
-  /** ajouter un tag dans la liste sélectionnée */
-  add(event: MatChipInputEvent): void {
-    const input = event.input;
-    const value = event.value;
+  initAuthors() {
+    this.authorService.search().subscribe(res => this.allAuthors = res);
 
-    // Add our fruit
-    if ((value || '').trim()) {
-      this.tags.push(value.trim());
-    }
-
-    // Reset the input value
-    if (input) {
-      input.value = '';
-    }
+    this.authors = this.formGroup.controls['author'].valueChanges
+      .pipe(
+        startWith(''),
+        map(value => typeof value === 'string' ? value : value.name),
+        map(name => name ? this._filterAuthors(name) : this.allAuthors.slice()));
   }
 
-  /** Supprimer un tag de la liste sélectionnée */
-  remove(tag: string): void {
-    const index = this.tags.indexOf(tag);
+  initThemes() {
+    this.themeService.search().subscribe(res => {
+      this.allThemes = res;
+    });
 
-    if (index >= 0) {
-      this.tags.splice(index, 1);
-    }
+    this.themes = this.formGroup.controls['themes'].valueChanges
+      .pipe(
+        startWith(''),
+        map(value => typeof value === 'string' ? value : value.name),
+        map(name => name ? this._filterThemes(name) : this.allThemes.slice()));
   }
+
+
+  displayFn(obj: any): string {
+    return obj && obj.name ? obj.name : '';
+  }
+
+  private _filterThemes(value: string): Theme[] {
+    const filterValue = value.toLowerCase();
+    return this.allThemes.filter(option => option.name.toLowerCase().includes(filterValue));
+  }
+
+  private _filterAuthors(value: string): Author[] {
+    const filterValue = value.toLowerCase();
+    return this.allAuthors.filter(option => option.name.toLowerCase().includes(filterValue));
+  }
+
 }

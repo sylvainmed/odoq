@@ -16,6 +16,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {LoaderComponent} from './component/loader/loader.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {RouterModule} from '@angular/router';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {RouterModule} from '@angular/router';
     MatPaginatorModule,
     MatSortModule,
     MatToolbarModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     PageNotFoundComponent,

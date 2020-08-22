@@ -22,7 +22,7 @@ export interface Quote {
   source?: string;
 
   /** Liste des thèmes dans lesquels ranger la quote */
-  theme?: Array<Theme>;
+  themes?: Array<Theme>;
 
   /** Liste des tags */
   tags?: Array<string>;
