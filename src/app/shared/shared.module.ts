@@ -17,6 +17,7 @@ import {LoaderComponent} from './component/loader/loader.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {RouterModule} from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
+import { AppLoaderComponent } from './component/app-loader/app-loader.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     CarouselComponent,
     QuoteCardComponent,
     ButtonsToolbarComponent,
-    LoaderComponent
+    LoaderComponent,
+    AppLoaderComponent
   ],
   imports: [
     CommonModule,
@@ -41,15 +43,16 @@ import {ReactiveFormsModule} from '@angular/forms';
     RouterModule,
     ReactiveFormsModule
   ],
-  exports: [
-    PageNotFoundComponent,
-    DatatableComponent,
-    GridCardsComponent,
-    CarouselComponent,
-    ButtonsToolbarComponent,
-    LoaderComponent,
-    QuoteCardComponent
-  ]
+    exports: [
+        PageNotFoundComponent,
+        DatatableComponent,
+        GridCardsComponent,
+        CarouselComponent,
+        ButtonsToolbarComponent,
+        LoaderComponent,
+        QuoteCardComponent,
+        AppLoaderComponent
+    ]
 })
 export class SharedModule {
 }

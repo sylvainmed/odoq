@@ -1,19 +1,30 @@
 /**
  * Interface représentant le retour d'une pagination d'élements
  */
-export interface Page<T> {
-  /**
-   * la liste des éléments paginés
-   */
-  content: Array<T>;
+import {Pageable} from './pageable.model';
+import {Sort} from './sort.model';
 
-  /**
-   * le number total d'éléments retournés par la requete
-   */
+export interface Page<T> {
+
+  content: T[];
+
+  empty: boolean;
+
+  first: boolean;
+
+  last: boolean;
+
+  number: number;
+
+  numberOfElements: number;
+
+  pageable: Pageable;
+
+  sort: Sort;
+
+  size: number;
+
   totalElements: number;
 
-  /**
-   * nombre total de pages d'éléments
-   */
   totalPages: number;
 }

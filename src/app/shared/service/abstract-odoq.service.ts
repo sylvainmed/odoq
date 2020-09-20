@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {Page} from '../model/paging/page.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,11 @@ export class AbstractOdoqService<T> {
     this._http = http;
   }
 
-  search(param?): Observable<Array<T>> {
-    return this._http.get<Array<T>>(`${this.baseUrl}`, {params: param});
+  search(param?): Observable<Page<T>> {
+    return this._http.get<Page<T>>(`${this.baseUrl}`);
   }
 
-  get(id: number): Observable<T> {
+  get(id: string): Observable<T> {
     return this._http.get<T>(`${this.baseUrl}/${id}`);
   }
 

@@ -1,0 +1,20 @@
+@import '../../../../assets/style/_variables.scss';
+
+.app-loader {
+  position: absolute;
+  width: 100%;
+  min-height: 3px;
+  max-height: 3px;
+  animation: animateBg 1s infinite linear;
+  background-image: linear-gradient(to right, $white 10%, darken($primary, 5%) 30%, $white 60%);
+  background-size: 200% 100%;
+}
+
+@keyframes animateBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

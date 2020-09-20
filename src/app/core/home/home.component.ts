@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Quote} from '../../shared/model/quote.model';
 import {QuoteService} from '../../shared/service/quote.service';
+import {Pageable} from '../../shared/model/paging/pageable.model';
+import {Page} from '../../shared/model/paging/page.model';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   mainQuote: any;
 
-  isLoading: boolean = true;
+  isLoadingQuotes: boolean = true;
 
   allCards: Array<Quote> = [];
 
@@ -37,11 +39,11 @@ export class HomeComponent implements OnInit {
   }
 
   initQuotes() {
-    this.quoteService.search().subscribe(res => {
-        this.allCards = res;
+    this.quoteService.search().subscribe((res: Page<Quote>) => {
+        this.allCards = res.content;
       },
       (err) => (console.log(err)),
-      () => this.isLoading = false);
+      () => this.isLoadingQuotes = false);
   }
 
   /**

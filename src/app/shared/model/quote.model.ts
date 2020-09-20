@@ -4,7 +4,7 @@ import {Author} from './author.model';
 export interface Quote {
 
   /** identifiant */
-  id: number;
+  id: string;
 
   /** date de création de l'objet en base */
   dateCreation: Date;

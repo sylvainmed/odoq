@@ -20,7 +20,7 @@ export class TimelineComponent implements OnInit {
   ngOnInit(): void {
     this.quoteService.search().pipe(take(1))
       .subscribe(result => {
-          this.quotes = result;
+          this.quotes = result.content;
         },
         (err) => (console.log(err)),
         () => this.isLoading = false);

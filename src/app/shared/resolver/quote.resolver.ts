@@ -16,7 +16,7 @@ export class QuoteResolver implements Resolve<Quote> {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Quote> | Promise<Quote> | Quote {
-    const id = +route.paramMap.get('id');
+    const id = route.paramMap.get('id');
     if (id) {
       return this.quoteService.get(id)
         .pipe(

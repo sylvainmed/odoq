@@ -16,7 +16,7 @@ export class ThemeResolver implements Resolve<Theme> {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Theme> | Promise<Theme> | Theme {
-    const id = +route.paramMap.get('id');
+    const id = route.paramMap.get('id');
     if (id) {
       return this.themeService.get(id)
         .pipe(

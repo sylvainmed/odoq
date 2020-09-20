@@ -1,6 +1,6 @@
 export interface Author {
 
-  id: number;
+  id: string;
   fictional: boolean;
   name: string;
   source: string;

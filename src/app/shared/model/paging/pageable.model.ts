@@ -1,10 +1,20 @@
 /**
- * interface représentant un pageable permettant de faire des demandes de pagination au serveur
+ * interface représentant un pageable permettant de faire de la pagination des données
  */
+import {Sort} from './sort.model';
+
 export interface Pageable {
 
-  page: number;
+  offset: number;
 
-  size: number;
+  pageNumber: number;
+
+  pageSize: number;
+
+  paged: true;
+
+  sort: Sort;
+
+  unpaged: boolean;
 
 }

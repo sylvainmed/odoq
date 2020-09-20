@@ -16,7 +16,7 @@ export class AuthorResolver implements Resolve<Author> {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Author> | Promise<Author> | Author {
-    const id = +route.paramMap.get('id');
+    const id = route.paramMap.get('id');
     if (id) {
       return this.authorService.get(id)
         .pipe(

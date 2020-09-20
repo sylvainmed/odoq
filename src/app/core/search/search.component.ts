@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from '@angular/router';
-import {Location} from '@angular/common';
 import {QuoteService} from '../../shared/service/quote.service';
 import {take} from 'rxjs/operators';
 import {Quote} from '../../shared/model/quote.model';
@@ -10,18 +9,14 @@ import {Quote} from '../../shared/model/quote.model';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
   resultsSearch: Array<Quote> = [];
 
   valueToSearch: string;
 
   constructor(private readonly router: Router,
-              private readonly quoteService: QuoteService,
-              private readonly location: Location) {
-  }
-
-  ngOnInit() {
+              private readonly quoteService: QuoteService) {
   }
 
   handleSearch(value: string) {
@@ -31,7 +26,7 @@ export class SearchComponent implements OnInit {
     };
     this.quoteService.search(params).pipe(take(1))
       .subscribe(result => {
-        this.resultsSearch = result;
+        this.resultsSearch = result.content;
       });
   }
 

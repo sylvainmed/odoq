@@ -14,7 +14,7 @@
 .timeline::after {
   content: '';
   position: absolute;
-  width: 4px;
+  width: 3px;
   background-color: $primary;
   top: 0;
   bottom: 0;
@@ -38,7 +38,7 @@
   height: 15px;
   right: -9px;
   background-color: white;
-  border: 2px solid $primary;
+  border: 3px solid $primary;
   top: 15px;
   border-radius: 50%;
   z-index: 1;
@@ -59,7 +59,7 @@
   content: " ";
   height: 0;
   position: absolute;
-  top: 22px;
+  top: 18px;
   width: 0;
   z-index: 1;
   right: 30px;
@@ -73,7 +73,7 @@
   content: " ";
   height: 0;
   position: absolute;
-  top: 22px;
+  top: 18px;
   width: 0;
   z-index: 1;
   left: 30px;
@@ -84,7 +84,7 @@
 
 /* Fix the circle for containers on the right side */
 .right::after {
-  left: -10px;
+  left: -11px;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */

@@ -12,6 +12,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatMomentDateModule} from '@angular/material-moment-adapter';
 import {RouteReuseStrategy} from '@angular/router';
 import {AppRoutingCache} from './app-routing-cache';
+import {SharedModule} from './shared/shared.module';
 
 export function initializeApp(appConfig: AppConfService) {
   return () => appConfig.getConf();
@@ -25,22 +26,23 @@ export function httpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   declarations: [
     AppComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatSnackBarModule,
-    MatMomentDateModule,
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatSnackBarModule,
+        MatMomentDateModule,
 
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: httpLoaderFactory,
-        deps: [HttpClient]
-      }
-    }),
-    AppRoutingModule
-  ],
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: httpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
+        AppRoutingModule,
+        SharedModule
+    ],
   providers: [
     {provide: LOCALE_ID, useValue: 'fr'},
     TranslateModule,

@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AdminMenuComponent implements OnInit {
 
-  private itemsMenu = [{
+  itemsMenu = [{
     name: 'odoq.admin.menu.dashboard',
     routerLink: '/admin'
   }, {

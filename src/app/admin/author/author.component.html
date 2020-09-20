@@ -3,7 +3,7 @@
   <div class="admin-list">
     <app-datatable #datatable
                    [service]="authorService"
-                   [displayedColumns]="['name', 'fictional', 'source', 'function']"
+                   [displayedColumns]="['name']"
                    [keyTraduction]="keyTraduction + '.table'"
                    (selectedItemChanged)="navigateToDetail($event)">
       <ng-container matColumnDef="id">
